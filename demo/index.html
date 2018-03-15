@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../dist/countUp.min.js"></script>
+</head>
+
+<body>
+  <span class="countup" id="myTargetElement"></span>
+  <br />
+  <br />
+  <span class="countup" id="targetElem"></span>
+
+  <script>
+    var countup = new CountUp('myTargetElement', 24.02, 9645.72, 1, 1.5);
+
+    if (!countup.error) {
+      countup.start();
+    } else {
+      console.log(countup.error);
+    }
+
+    var endVal = 9645.72;
+    var duration = 1000;
+    var numAnim = new CountUp("targetElem", 0, endVal - 1000, 2, duration / 2);
+    numAnim.start(function () {
+      numAnim.update(endVal);
+    });
+  </script>
+</body>
+
+</html>
